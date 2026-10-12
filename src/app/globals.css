@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+
+  --color-sand-50: #fbf8f3;
+  --color-sand-100: #f4eee4;
+  --color-sand-200: #e8dfd0;
+
+  --color-brand-50: #ecfaf6;
+  --color-brand-100: #d2f2e9;
+  --color-brand-200: #a6e3d3;
+  --color-brand-500: #13a088;
+  --color-brand-600: #0e8a76;
+  --color-brand-700: #0b6e5f;
+  --color-brand-800: #0a574c;
+  --color-brand-900: #083c35;
+
+  --color-accent-50: #fff4ee;
+  --color-accent-100: #ffe3d4;
+  --color-accent-500: #f26b3a;
+  --color-accent-600: #dc5426;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+body {
+  background: var(--color-sand-50);
+  color: var(--color-stone-800);
+}
+
+/* Ô nhập liệu dùng chung */
+@utility field {
+  @apply w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-900 shadow-sm outline-none transition placeholder:text-stone-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100;
+}
+
+/* Ghim đánh số trên bản đồ */
+.map-pin {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  background: var(--pin);
+  color: #fff;
+  font: 600 12px/1 var(--font-be-vietnam), sans-serif;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+}
+
+.leaflet-container {
+  font-family: var(--font-be-vietnam), sans-serif;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+}
